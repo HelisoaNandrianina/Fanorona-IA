@@ -34,16 +34,16 @@
 
 **Fanoron-telo** est une application web complète du jeu de société traditionnel malgache du même nom, opposant alignement stratégique et anticipation. L'application propose :
 
-- ✅ **Mode Humain vs Humain** en local (même appareil, tour par tour)
-- ✅ **Mode Humain vs IA** avec 3 niveaux de difficulté (Facile / Moyen / Difficile)
-- ✅ **Mode IA vs IA** (démonstration automatique, niveaux configurables indépendamment pour chaque IA)
-- ✅ **Gestion robuste des règles** : phase de placement, phase de mouvement, détection d'alignement (lignes, colonnes, diagonales), détection de blocage total et de nulle par répétition
-- ✅ **IA Difficile** basée sur Minimax + élagage Alpha-Beta, avec table de transposition, opening book et approfondissement itératif
-- ✅ **Historique des coups** en notation `a1`–`c3`
-- ✅ **Statistiques IA en direct** : temps de réflexion, profondeur de recherche, nœuds explorés, hits de la table de transposition
-- ✅ **Indicateur de phase et de tour** clairement affiché
-- ✅ **Annulation / rétablissement de coup (Undo/Redo)**, avec saut automatique des tours IA pour toujours revenir à un tour jouable par l'humain
-- ✅ **Déploiement en ligne sur Vercel** (cf. [2.4](#24-lien-vers-la-version-hébergée))
+- **Mode Humain vs Humain** en local (même appareil, tour par tour)
+- **Mode Humain vs IA** avec 3 niveaux de difficulté (Facile / Moyen / Difficile)
+- **Mode IA vs IA** (démonstration automatique, niveaux configurables indépendamment pour chaque IA)
+- **Gestion robuste des règles** : phase de placement, phase de mouvement, détection d'alignement (lignes, colonnes, diagonales), détection de blocage total et de nulle par répétition
+- **IA Difficile** basée sur Minimax + élagage Alpha-Beta, avec table de transposition, opening book et approfondissement itératif
+- **Historique des coups** en notation `a1`–`c3`
+- **Statistiques IA en direct** : temps de réflexion, profondeur de recherche, nœuds explorés, hits de la table de transposition
+- **Indicateur de phase et de tour** clairement affiché
+- **Annulation / rétablissement de coup (Undo/Redo)**, avec saut automatique des tours IA pour toujours revenir à un tour jouable par l'humain
+- **Déploiement en ligne sur Vercel** (cf. [2.4](#24-lien-vers-la-version-hébergée))
 
 ### 2.2 Architecture et pile technologique
 
