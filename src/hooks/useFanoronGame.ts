@@ -12,7 +12,7 @@ import { createInitialState, applyMove, generateLegalMoves, isGameOver } from ".
 import { computeBestMove, resetTranspositionTable } from "../ai/minimax";
 import { isCellEmpty } from "../game/board";
 
-const AI_THINK_DELAY_MIN_MS = 350; // pour que l'utilisateur perçoive la "réflexion" même si l'IA est instantanée
+const AI_THINK_DELAY_MIN_MS = 350; 
 
 function isAIControlled(mode: GameMode, player: Player): boolean {
   if (mode === "ia-vs-ia") return true;
@@ -27,10 +27,7 @@ export function useFanoronGame(config: GameConfig) {
   const [winningLine, setWinningLine] = useState<readonly [number, number, number] | null>(null);
   const aiTimeoutRef = useRef<number | null>(null);
 
-  // Piles d'historique pour Undo/Redo : chaque entrée est un état complet du
-  // jeu *avant* le demi-coup correspondant. `pastStates` permet de reculer,
-  // `futureStates` permet de "rejouer" après un undo (vidée dès qu'un nouveau
-  // coup est joué après un retour en arrière, comme dans tout éditeur classique).
+
   const [pastStates, setPastStates] = useState<GameState[]>([]);
   const [futureStates, setFutureStates] = useState<GameState[]>([]);
 
@@ -51,7 +48,7 @@ export function useFanoronGame(config: GameConfig) {
   // Réinitialise la partie si le mode change (ex: retour au menu puis nouveau mode)
   useEffect(() => {
     resetGame(config.starter);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+
   }, [config.mode, config.difficultyP1, config.difficultyP2]);
 
   const playMove = useCallback((move: Move) => {
@@ -68,7 +65,7 @@ export function useFanoronGame(config: GameConfig) {
     });
   }, []);
 
-  /** Sélection / déplacement humain via clic sur une case. */
+
   const handleCellClick = useCallback((cell: number) => {
     setState((prev) => {
       if (isGameOver(prev)) return prev;
@@ -120,12 +117,7 @@ export function useFanoronGame(config: GameConfig) {
     });
   }, [config.mode]);
 
-  /**
-   * Annule le ou les derniers demi-coups (Undo). En mode Humain vs IA / IA vs IA,
-   * on recule automatiquement jusqu'au dernier état où c'est au joueur humain de
-   * jouer (ou jusqu'au tout début de la partie), pour éviter de se retrouver
-   * bloqué sur un tour IA après l'annulation. Désactivé pendant la réflexion de l'IA.
-   */
+
   const undo = useCallback(() => {
     if (isThinking) return;
     setPastStates((stack) => {
@@ -135,7 +127,6 @@ export function useFanoronGame(config: GameConfig) {
       const skipped: GameState[] = [];
 
       // Recule tant que l'état ciblé correspondrait à un tour contrôlé par l'IA
-      // (sauf en mode IA vs IA, où il n'y a aucun tour humain à atteindre : un seul cran suffit).
       do {
         cursor--;
       } while (
@@ -155,7 +146,7 @@ export function useFanoronGame(config: GameConfig) {
     });
   }, [isThinking, config.mode]);
 
-  /** Rejoue le(s) coup(s) précédemment annulé(s) (Redo), symétrique de undo. */
+
   const redo = useCallback(() => {
     if (isThinking) return;
     setFutureStates((future) => {

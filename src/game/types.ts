@@ -1,26 +1,11 @@
-// Fanoron-telo — types fondamentaux du jeu
 
-/** Une intersection du plateau, identifiée par son index 0..8
- *  Disposition spatiale (cf. énoncé) :
- *
- *      a    b    c
- *  3   6 -- 7 -- 8
- *      |  \ | /  |
- *  2   3 -- 4 -- 5
- *      |  / | \  |
- *  1   0 -- 1 -- 2
- */
 export type CellIndex = number; // 0..8
 
 export type Player = "P1" | "P2";
 
 export type CellState = Player | null;
 
-/** Plateau représenté comme deux bitmasks (9 bits) — un par joueur.
- *  bit i = 1 si le joueur occupe l'intersection i.
- *  Permet des opérations bit à bit ultra-rapides pour la génération de coups
- *  et la détection d'alignement (cf. Section 5 du rapport : bitboards).
- */
+
 export interface BitBoard {
   p1: number; // bitmask 9 bits — pions du joueur 1
   p2: number; // bitmask 9 bits — pions du joueur 2

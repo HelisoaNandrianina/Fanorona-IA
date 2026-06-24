@@ -1,12 +1,3 @@
-// Fanoron-telo — fonction d'évaluation heuristique
-//
-// Évalue une position du point de vue de `player` (positif = bon pour player).
-// Heuristique composite, documentée dans le README (Section 5) :
-//   1. Victoire/défaite immédiate -> score extrême
-//   2. Nombre de lignes "ouvertes" à 2 pions (menaces) pour soi vs adversaire
-//   3. Contrôle du centre (case 4, la plus connectée : 8 voisins)
-//   4. Mobilité (nombre de coups légaux disponibles) en phase mouvement
-
 import type { BitBoard, GameState, Player } from "../game/types";
 import {
   WINNING_MASKS,

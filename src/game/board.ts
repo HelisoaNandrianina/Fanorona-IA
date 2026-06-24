@@ -1,27 +1,5 @@
-// Fanoron-telo — géométrie du plateau et opérations bitboard
-//
-// Le plateau est un carré 3x3 où CHAQUE intersection est connectée à ses
-// voisines orthogonales ET diagonales (comme l'indique le schéma de l'énoncé :
-// les diagonales du carré sont aussi des "lignes" de jeu, plus les diagonales
-// internes de chaque quadrant). On modélise cela comme un graphe explicite
-// d'adjacence plutôt que de le redériver à chaque fois : plus rapide, et
-// plus facile à vérifier visuellement contre le schéma fourni.
-
 import type { BitBoard, CellIndex, Player } from "./types";
 
-/**
- * Index des intersections :
- *   6 -- 7 -- 8
- *   |  \ | /  |
- *   3 -- 4 -- 5
- *   |  / | \  |
- *   0 -- 1 -- 2
- *
- * Coordonnées (col, row) pour le rendu :
- *   0:(0,0) 1:(1,0) 2:(2,0)
- *   3:(0,1) 4:(1,1) 5:(2,1)
- *   6:(0,2) 7:(1,2) 8:(2,2)
- */
 export const COORDS: ReadonlyArray<readonly [number, number]> = [
   [0, 0], [1, 0], [2, 0],
   [0, 1], [1, 1], [2, 1],
@@ -34,7 +12,7 @@ export const ADJACENCY: ReadonlyArray<ReadonlyArray<CellIndex>> = [
   /* 1 */ [0, 2, 4],
   /* 2 */ [1, 4, 5],
   /* 3 */ [0, 4, 6],
-  /* 4 */ [0, 1, 2, 3, 5, 6, 7, 8], // centre : relié à tout le monde
+  /* 4 */ [0, 1, 2, 3, 5, 6, 7, 8], 
   /* 5 */ [2, 4, 8],
   /* 6 */ [3, 4, 7],
   /* 7 */ [4, 6, 8],
@@ -62,7 +40,7 @@ export const WINNING_MASKS: ReadonlyArray<number> = WINNING_LINES.map(
   ([a, b, c]) => (1 << a) | (1 << b) | (1 << c)
 );
 
-export const FULL_MASK = 0b111111111; // 9 bits à 1
+export const FULL_MASK = 0b111111111; 
 export const CENTER_CELL = 4;
 export const CORNER_CELLS: ReadonlyArray<CellIndex> = [0, 2, 6, 8];
 export const EDGE_CELLS: ReadonlyArray<CellIndex> = [1, 3, 5, 7];

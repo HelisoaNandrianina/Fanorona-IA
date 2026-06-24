@@ -1,16 +1,3 @@
-// Fanoron-telo — moteur IA (Minimax + élagage Alpha-Beta)
-//
-// Cf. Section 5 du rapport pour l'explication scientifique complète.
-// Techniques implémentées :
-//   - Minimax avec élagage Alpha-Beta
-//   - Table de transposition (mémorisation des sous-arbres déjà évalués)
-//   - Iterative deepening (approfondissement itératif) pour le mode Difficile,
-//     ce qui permet de respecter un budget de temps tout en gardant le
-//     meilleur coup trouvé au dernier palier complet
-//   - Opening book pour les tout premiers coups
-//   - Tri des coups (move ordering) : on évalue les captures de centre /
-//     menaces en premier pour améliorer l'élagage Alpha-Beta
-
 import type { Difficulty, GameState, Move, Player } from "../game/types";
 import { applyMove, generateLegalMoves } from "../game/rules";
 import { evaluate, WIN_SCORE } from "./evaluation";

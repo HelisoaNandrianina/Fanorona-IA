@@ -1,15 +1,3 @@
-// Fanoron-telo — opening book
-//
-// Bibliothèque de coups d'ouverture prédéfinis (cf. Section 5 du rapport).
-// Le plateau étant petit et hautement symétrique, les meilleures réponses
-// aux premiers coups sont connues : on les précalcule pour donner à l'IA
-// une ouverture solide instantanée, sans recherche, et économiser du temps
-// de réflexion pour la suite de la partie (surtout utile en mode Difficile).
-//
-// Clé = hash du plateau (cf. hashBoard) -> coup recommandé.
-// Le livre ne couvre que les tout premiers coups (plateau peu rempli) ;
-// au-delà, l'IA bascule automatiquement sur le Minimax/Alpha-Beta.
-
 import type { BitBoard, Move, Player } from "./../game/types";
 import { hashBoard, occupiedMask, CENTER_CELL, CORNER_CELLS } from "../game/board";
 

@@ -95,7 +95,7 @@ Interface inspirée des plateformes d'échecs modernes (Chess.com, Lichess) : so
 
 ### 2.4 Lien vers la version hébergée
 
-L'application est déployée sur **Vercel** : 
+L'application est déployée sur **Vercel** : `https://fanorona-ia.vercel.app/`
 
 Déploiement automatique à chaque push sur la branche principale (build Vite détecté nativement par Vercel, configuration explicite dans `vercel.json` à la racine du dépôt).
 
@@ -111,10 +111,7 @@ npm run dev
 
 L'application est ensuite accessible sur `http://localhost:5173`.
 
-<details>
-**Déploiement (Vercel) :** le projet est préconfiguré (`vercel.json` à la racine — build Vite standard, réécriture SPA vers `index.html`). Importer le dépôt GitHub depuis le tableau de bord Vercel (« Add New Project ») ou exécuter `vercel --prod` avec la CLI ; aucune variable d'environnement n'est requise.
 
-</details>
 
 ---
 

@@ -1,10 +1,3 @@
-// Fanoron-telo — table de transposition
-//
-// Stocke les évaluations déjà calculées pour un état (clé = hash plateau +
-// joueur + phase) afin d'éviter de recalculer des sous-arbres identiques
-// atteints par des chemins de coups différents (transpositions). Classique
-// en Minimax/Alpha-Beta — cf. Section 5 du rapport.
-
 export type TTFlag = "exact" | "lowerbound" | "upperbound";
 
 export interface TTEntry {

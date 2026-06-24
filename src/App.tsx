@@ -55,9 +55,7 @@ export default function App() {
 
   function handleSelectMode(newMode: GameMode) {
     setMode(newMode);
-    // On réinitialise les difficultés si on change de mode, pour éviter
-    // de lancer une partie avec une config obsolète (ex: ancien choix IA vs IA
-    // réutilisé silencieusement pour Humain vs IA).
+
     setDifficultyP1(null);
     setDifficultyP2(null);
   }

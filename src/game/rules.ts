@@ -1,11 +1,3 @@
-// Fanoron-telo — moteur de règles
-//
-// Gère les transitions d'état pures (aucune dépendance UI) : génération des
-// coups légaux selon la phase, application d'un coup, détection de victoire
-// et détection de nulle (répétition de position en phase de mouvement, le
-// jeu n'ayant pas de règle de nulle explicite dans l'énoncé — on l'ajoute
-// par robustesse pour éviter les boucles infinies en phase 2).
-
 import type { GameState, Move, Player, GamePhase, BitBoard } from "./types";
 import {
   emptyBoard,
@@ -91,7 +83,6 @@ export function applyMove(state: GameState, move: Move): ApplyResult {
   const won = hasWinningLine(playerMask);
 
   // Transition de phase : dès que les 6 pions sont posés (3 chacun), sans victoire,
-  // on passe en phase mouvement.
   if (
     newPhase === "placement" &&
     newPlacedCount.P1 === 3 &&
