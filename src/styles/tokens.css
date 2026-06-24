@@ -1,0 +1,59 @@
+/* ============================================================
+   FANORON-TELO — Design Tokens
+   Direction : sobriété compétitive façon Chess.com / Lichess,
+   matériau "plateau en bois" malgache, vert profond, ivoire.
+   ============================================================ */
+
+:root {
+  /* --- Palette principale (imposée par le brief) --- */
+  --c-bg-anthracite: #1a1a1a;
+  --c-bg-anthracite-deep: #121212;
+  --c-bg-panel: #232220;
+  --c-bg-panel-raised: #2b2926;
+
+  --c-wood-dark: #3e2a1d;
+  --c-wood-mid: #5a3d28;
+  --c-wood-light: #7a5536;
+  --c-wood-grain: #4a3220;
+
+  --c-green-deep: #0e3b2e;
+  --c-green-mid: #16513f;
+  --c-green-accent: #1f7a5c;
+  --c-green-glow: rgba(31, 122, 92, 0.35);
+
+  --c-ivory: #f2ead9;
+  --c-ivory-dim: #cfc6b3;
+  --c-ivory-faint: #8d8576;
+
+  /* --- Joueurs (pions) --- */
+  --c-piece-p1: #f2ead9;       /* ivoire — pièce claire */
+  --c-piece-p1-shadow: #b8ad94;
+  --c-piece-p2: #161513;       /* ébène — pièce sombre */
+  --c-piece-p2-shadow: #050504;
+
+  /* --- États / feedback --- */
+  --c-danger: #8a3b32;
+  --c-warning: #b08a3e;
+  --c-success: var(--c-green-accent);
+  --c-highlight: #d4af6a; /* doré discret pour les cases jouables / dernier coup */
+
+  /* --- Typographie --- */
+  --font-display: "Cinzel", "Playfair Display", Georgia, serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-body: "Inter", -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+
+  /* --- Rayons / ombres --- */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+  --shadow-panel: 0 8px 24px rgba(0, 0, 0, 0.45), 0 1px 0 rgba(255, 255, 255, 0.03) inset;
+  --shadow-board: 0 20px 60px rgba(0, 0, 0, 0.55);
+  --shadow-piece: 0 3px 6px rgba(0, 0, 0, 0.5);
+  --shadow-piece-elevated: 0 8px 14px rgba(0, 0, 0, 0.55);
+
+  --border-subtle: 1px solid rgba(242, 234, 217, 0.08);
+  --border-gold: 1px solid rgba(212, 175, 106, 0.35);
+
+  color-scheme: dark;
+}

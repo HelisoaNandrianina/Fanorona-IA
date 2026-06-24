@@ -1,0 +1,47 @@
+.ai-stats {
+  background: var(--c-bg-panel);
+  border: var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 16px 18px;
+}
+
+.ai-stats__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-ivory-faint);
+  display: block;
+  margin-bottom: 12px;
+}
+
+.ai-stats__placeholder {
+  font-size: 13px;
+  color: var(--c-ivory-faint);
+  font-style: italic;
+}
+
+.ai-stats__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.ai-stats__metric {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ai-stats__value {
+  font-family: var(--font-mono);
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--c-green-accent);
+}
+
+.ai-stats__label {
+  font-size: 11px;
+  color: var(--c-ivory-faint);
+  letter-spacing: 0.02em;
+}

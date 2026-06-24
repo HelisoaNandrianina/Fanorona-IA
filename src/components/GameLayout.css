@@ -1,0 +1,132 @@
+.game-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: radial-gradient(ellipse at top, var(--c-bg-anthracite) 0%, var(--c-bg-anthracite-deep) 100%);
+}
+
+.game-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 32px;
+  border-bottom: var(--border-subtle);
+}
+
+.game-header__back {
+  background: transparent;
+  border: none;
+  color: var(--c-ivory-faint);
+  font-size: 14px;
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  transition: color 140ms ease, background 140ms ease;
+}
+.game-header__back:hover {
+  color: var(--c-ivory);
+  background: rgba(242, 234, 217, 0.05);
+}
+
+.game-header__title {
+  font-size: 22px;
+  letter-spacing: 0.06em;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.game-header__meta {
+  display: flex;
+  gap: 10px;
+}
+
+.game-header__badge {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  color: var(--c-highlight);
+  border: 1px solid rgba(212, 175, 106, 0.35);
+  padding: 5px 12px;
+  border-radius: 20px;
+}
+
+.game-main {
+  flex: 1;
+  display: flex;
+  gap: 28px;
+  padding: 36px 32px;
+  max-width: 1180px;
+  width: 100%;
+  margin: 0 auto;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.game-board-zone {
+  flex: 1.4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 0;
+}
+
+.game-sidebar {
+  flex: 1;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 280px;
+}
+
+.game-sidebar__actions {
+  margin-top: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.game-sidebar__undo-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.rematch-banner {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--c-bg-panel-raised);
+  border: var(--border-gold);
+  border-radius: var(--radius-md);
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  box-shadow: var(--shadow-panel);
+  font-family: var(--font-serif);
+  font-size: 15px;
+  animation: slide-up 220ms ease;
+  z-index: 50;
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translate(-50%, 12px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+@media (max-width: 980px) {
+  .game-main {
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 16px;
+  }
+  .game-sidebar {
+    max-width: 460px;
+    width: 100%;
+  }
+  .game-header__title {
+    font-size: 18px;
+  }
+}

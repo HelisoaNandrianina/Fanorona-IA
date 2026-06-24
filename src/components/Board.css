@@ -1,0 +1,120 @@
+.board-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.board-frame {
+  position: relative;
+  padding: 28px 38px 44px 38px;
+  background: linear-gradient(160deg, var(--c-bg-panel-raised), var(--c-bg-panel));
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-board);
+  border: var(--border-subtle);
+  overflow: hidden;
+}
+
+.board-svg {
+  width: min(72vmin, 460px);
+  height: min(72vmin, 460px);
+  display: block;
+}
+
+.board-node {
+  outline: none;
+}
+.board-node.interactive {
+  cursor: pointer;
+}
+.board-node.interactive:focus-visible circle:first-of-type {
+  stroke: var(--c-highlight);
+  stroke-width: 2;
+}
+
+.legal-dot {
+  fill: var(--c-green-glow);
+  stroke: var(--c-green-accent);
+  stroke-width: 1.5;
+  stroke-dasharray: 3 2;
+  animation: pulse-dot 2.2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 0.55; r: 13; }
+  50% { opacity: 0.9; r: 16; }
+}
+
+.piece {
+  transition: transform 160ms ease;
+}
+.piece-base {
+  fill: rgba(0, 0, 0, 0.35);
+}
+.piece-face {
+  stroke-width: 1;
+}
+.piece-p1 .piece-face {
+  fill: var(--c-piece-p1);
+  stroke: var(--c-piece-p1-shadow);
+}
+.piece-p2 .piece-face {
+  fill: var(--c-piece-p2);
+  stroke: #000;
+}
+.piece-gloss {
+  fill: rgba(255, 255, 255, 0.18);
+  pointer-events: none;
+}
+.piece-p2 .piece-gloss {
+  fill: rgba(255, 255, 255, 0.08);
+}
+
+.piece-selected .piece-face {
+  stroke: var(--c-highlight);
+  stroke-width: 2.5;
+}
+.piece-movable {
+  cursor: pointer;
+}
+.piece-winning .piece-face {
+  stroke: var(--c-green-accent);
+  stroke-width: 3;
+}
+
+.winning-line {
+  filter: drop-shadow(0 0 4px var(--c-green-glow));
+}
+
+.board-coords-col {
+  position: absolute;
+  left: 16px;
+  top: 28px;
+  bottom: 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--c-ivory-faint);
+  padding: 6px 0;
+}
+
+.board-coords-row {
+  position: absolute;
+  left: 38px;
+  right: 38px;
+  bottom: 18px;
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--c-ivory-faint);
+  padding: 0 4px;
+}
+
+@media (max-width: 720px) {
+  .board-frame {
+    padding: 20px 22px 34px 22px;
+  }
+}

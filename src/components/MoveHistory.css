@@ -1,0 +1,61 @@
+.move-history {
+  background: var(--c-bg-panel);
+  border: var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  flex: 1;
+}
+
+.move-history__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-ivory-faint);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.move-history__list {
+  overflow-y: auto;
+  flex: 1;
+  min-height: 80px;
+  max-height: 220px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+.move-history__empty {
+  color: var(--c-ivory-faint);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-style: italic;
+}
+
+.move-history__row {
+  display: grid;
+  grid-template-columns: 28px 1fr 1fr;
+  gap: 8px;
+  padding: 4px 2px;
+  border-bottom: 1px solid rgba(242, 234, 217, 0.05);
+}
+
+.move-history__num {
+  color: var(--c-ivory-faint);
+}
+
+.move-history__cell {
+  color: var(--c-ivory-dim);
+}
+
+.move-history__cell--p1::before {
+  content: "○ ";
+  color: var(--c-piece-p1);
+}
+.move-history__cell--p2::before {
+  content: "● ";
+  color: var(--c-ivory-dim);
+}
